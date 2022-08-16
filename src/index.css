@@ -91,6 +91,7 @@ input {
   padding: 1.5rem 3.4rem;
 }
 
-input[type="text"] {
+input[type="text"],
+.inputSenha {
   margin-bottom: 2.8rem;
 }

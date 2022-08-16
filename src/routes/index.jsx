@@ -4,13 +4,15 @@ import Home from "../pages/home";
 
 import React from "react";
 import Login from "../pages/login";
+import Register from "../pages/register";
 
 export default function MainRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Login />} />
+      <Route path="/" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/home" element={<Home />} />
+      <Route path="/register" element={<Register />} />
     </Routes>
   );
 }

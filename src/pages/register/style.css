@@ -1,0 +1,11 @@
+.containerRegister {
+  display: flex;
+  flex-direction: column;
+  /* justify-items: center;
+  justify-content: center; */
+  align-items: center;
+}
+
+.btn-login {
+  margin-top: 4.2rem;
+}
