@@ -5,7 +5,13 @@ import "./style.css";
 export default function Home() {
   return (
     <div>
-      <Header />
+      <div className="containerHome">
+        <Header />
+        <div className="containerBtn">
+          <button className="btn-basic">Básico</button>
+          <button className="btn-advanced">Avançado</button>
+        </div>
+      </div>
     </div>
   );
 }
