@@ -1,0 +1,25 @@
+.containerList {
+  display: flex;
+  flex-direction: column;
+  /* justify-items: center;
+  justify-content: center; */
+  align-items: center;
+}
+.headerList {
+  display: flex;
+}
+
+.btn-list {
+  margin-left: 1.8rem;
+  height: 5.8rem;
+  width: 8.8rem;
+}
+
+input[name="Tarefa"] {
+  width: 53.4rem;
+  margin-right: 2.1rem;
+}
+
+input[name="Categoria"] {
+  width: 31.6rem;
+}
