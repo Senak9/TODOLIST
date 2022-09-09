@@ -3,9 +3,10 @@ import Header from "../../component/header";
 import "./style.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../../api/api";
 
 const defaultForm = {
-  name: "",
+  username: "",
   password: "",
   confirmPassword: "",
 };
@@ -17,18 +18,23 @@ export default function Register() {
 
   async function handleSubmit(e) {
     e.preventDefault();
-
+    console.log("dddd");
     try {
-      if (!form.name || !form.password || !form.confirmPassword) {
+      if (!form.username || !form.password || !form.confirmPassword) {
+        console.log("ddadasda");
+        console.log(form);
         return;
       }
 
       if (form.password !== form.confirmPassword) {
+        console.log("213222123");
         return;
       }
 
+      console.log(form);
+
       const response = await api.post("/usuario", {
-        nome: form.name,
+        nome: form.username,
         senha: form.password,
       });
 
@@ -47,34 +53,36 @@ export default function Register() {
   }
 
   return (
-    <div className="containerRegister" onSubmit={handleSubmit}>
+    <div className="containerRegister">
       <Header />
-      <input
-        name="Username"
-        placeholder="Username"
-        type="text"
-        value={form.name}
-        onChange={handleChangeForm}
-        // required
-      />
-      <input
-        name="Senha"
-        placeholder="Senha"
-        type="password"
-        className="inputSenha"
-        value={form.password}
-        onChange={handleChangeForm}
-        // required
-      />
-      <input
-        name="Senha"
-        placeholder="Confimar senha"
-        type="password"
-        value={form.password}
-        onChange={handleChangeForm}
-        // required
-      />
-      <button className="btn-register">Cadastrar</button>
+      <form className="containerRegister" onSubmit={handleSubmit}>
+        {" "}
+        <input
+          name="username"
+          placeholder="Username"
+          type="text"
+          onChange={handleChangeForm}
+          // required
+        />
+        <input
+          name="password"
+          placeholder="Senha"
+          type="password"
+          className="inputSenha"
+          onChange={handleChangeForm}
+          // required
+        />
+        <input
+          name="confirmPassword"
+          placeholder="Confimar senha"
+          type="password"
+          onChange={handleChangeForm}
+          // required
+        />
+        <button className="btn-register" type="submit">
+          Cadastrar
+        </button>
+      </form>
     </div>
   );
 }
